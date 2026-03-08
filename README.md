@@ -4,7 +4,7 @@ OTA 업데이트 중 차량 상태 변경 원격 기능을 제한하고, 조회 
 ---
 
 ## SRS
-[docs/SRS.md] (https://github.com/bjayjay/mobiusPblProject/blob/main/docs/SRS.md)
+[요구사항 명세서] (https://github.com/bjayjay/mobiusPblProject/blob/main/docs/REQUIREMENT.md)
 
 ---
 
