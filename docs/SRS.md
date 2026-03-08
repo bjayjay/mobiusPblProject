@@ -172,6 +172,8 @@ Remote Request Manager
   "message": "OTA 설치 중에는 원격 제어를 수행할 수 없습니다."
 }
 
+---
+
 # 11. 테스트 시나리오
 
 | Test ID | 시나리오 | 기대 결과 |
