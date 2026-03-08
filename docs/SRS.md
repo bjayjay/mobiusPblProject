@@ -171,6 +171,7 @@ Remote Request Manager
   "errorCode": "REMOTE_LOCKED_BY_OTA",
   "message": "OTA 설치 중에는 원격 제어를 수행할 수 없습니다."
 }
+```
 
 ---
 
