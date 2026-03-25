@@ -94,6 +94,24 @@ class RemoteRequestManagerTest {
     }
 
     /**
+     * @brief Rebooting 상태에서도 조회 요청은 허용되는지 검증합니다.
+     * @param 없음
+     * @return 반환값 없음
+     * @date 2026-03-25
+     * @version Codex GPT-5
+     */
+    @Test
+    void queryRequestsRemainAvailableDuringRebooting() {
+        otaStateManager.updateState(OtaState.REBOOTING);
+
+        RemoteResponse response = remoteRequestManager.handle(new RemoteRequest(RemoteCommandType.OTA_STATUS));
+
+        assertTrue(response.isSuccess());
+        assertEquals(ResponseCode.SUCCESS, response.getCode());
+        assertEquals("OTA state=REBOOTING", response.getPayload());
+    }
+
+    /**
      * @brief Downloading 상태에서는 제어 요청이 허용되는지 검증합니다.
      * @param 없음
      * @return 반환값 없음
@@ -195,6 +213,22 @@ class RemoteRequestManagerTest {
 
         assertTrue(eventLogger.getEvents().stream().anyMatch(event -> event.contains("OTA state changed")));
         assertTrue(eventLogger.getEvents().stream().anyMatch(event -> event.contains("Blocked remote control request")));
+    }
+
+    /**
+     * @brief 잘못된 요청은 실패 응답과 함께 거부 로그를 남기는지 검증합니다.
+     * @param 없음
+     * @return 반환값 없음
+     * @date 2026-03-25
+     * @version Codex GPT-5
+     */
+    @Test
+    void invalidRequestIsRejectedAndLogged() {
+        RemoteResponse response = remoteRequestManager.handle(new RemoteRequest(null));
+
+        assertFalse(response.isSuccess());
+        assertEquals(ResponseCode.INVALID_REQUEST, response.getCode());
+        assertTrue(eventLogger.getEvents().stream().anyMatch(event -> event.contains("Rejected invalid remote request")));
     }
 
     /**

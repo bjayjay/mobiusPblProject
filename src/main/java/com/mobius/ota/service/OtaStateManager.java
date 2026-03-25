@@ -43,6 +43,9 @@ public final class OtaStateManager {
      * @version Codex GPT-5
      */
     public synchronized void updateState(OtaState newState) {
+        if (newState == null) {
+            throw new IllegalArgumentException("OTA state must not be null.");
+        }
         OtaState previousState = currentState;
         currentState = newState;
         eventLogger.log("OTA state changed: " + previousState + " -> " + newState);

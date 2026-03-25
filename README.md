@@ -14,30 +14,12 @@ OTA 업데이트 중 차량 상태 변경 원격 기능을 제한하고, 조회 
 
 ## 프로젝트 개요
 
-본 프로젝트는 자동차 기능 안전 표준인 ISO 26262와 A-SPICE에서 다루는 개발 절차를 팀 단위로 연습하기 위한 PBL(Project-Based Learning) 형식의 소프트웨어 개발 시뮬레이션이다. 단순 기능 구현에 그치지 않고, 요구사항 정의부터 설계, 구현, 검증까지 이어지는 개발 흐름과 산출물 관리 방식을 함께 다루는 것을 목표로 한다.
-
----
-
-## 개발 환경
-
-- AI Assistant: Codex (GPT-5 기반 코딩 에이전트)
-- Language: Java 8
-- Build Tool: Gradle 7.6.4 Wrapper
-- Test Framework: JUnit Jupiter 5.10.2
+본 프로젝트는 자동차 기능 안전 표준인 ISO 26262와 A-SPICE에서 다루는 개발 절차를  연습하기 위한 PBL(Project-Based Learning) 형식의 소프트웨어 개발 시뮬레이션이다. 단순 기능 구현에 그치지 않고, 요구사항 정의부터 설계, 구현, 검증까지 이어지는 개발 흐름과 산출물 관리 방식을 함께 다루는 것을 목표로 한다.
 
 ---
 
 ## SRS
-[요구사항 명세서](./docs/REQUIREMENTS.md)
-
----
-
-## 개발 규칙
-
-- 모든 구현과 로직 변경은 TDD 기반으로 진행한다.
-- 로직 변경 시 관련 테스트를 먼저 추가하거나 갱신한 뒤 구현한다.
-- 로직 변경 후 테스트와 품질 검증이 통과한 상태에서 커밋한다.
-- 개발 환경, 품질 기준, 협업 방식은 [DEVELOPMENT.md](./DEVELOPMENT.md)에서 관리한다.
+[요구사항 명세서](https://github.com/bjayjay/mobiusPblProject/blob/main/docs/REQUIREMENTS.md)
 
 ---
 
